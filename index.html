@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Group Kitchen Cloud - Kitchen Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>Group Kitchen Cloud</h1>
+                </div>
+                <div class="user-profile">
+                    <div class="user-info">
+                        <span class="user-name">Pradip Barik</span>
+                        <span class="user-role">Kitchen Manager</span>
+                    </div>
+                    <div class="user-avatar">PB</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sidebar -->
+        <nav class="sidebar">
+            <ul class="nav-menu">
+                <li class="nav-item active" data-page="dashboard">
+                    <span class="nav-icon">📊</span>
+                    <span class="nav-text">Dashboard</span>
+                </li>
+                <li class="nav-item" data-page="menu">
+                    <span class="nav-icon">🍽️</span>
+                    <span class="nav-text">Menu Optimization</span>
+                </li>
+                <li class="nav-item" data-page="kitchen">
+                    <span class="nav-icon">👨‍🍳</span>
+                    <span class="nav-text">Kitchen Display</span>
+                </li>
+                <li class="nav-item" data-page="inventory">
+                    <span class="nav-icon">📦</span>
+                    <span class="nav-text">Inventory</span>
+                </li>
+                <li class="nav-item" data-page="brands">
+                    <span class="nav-icon">🏪</span>
+                    <span class="nav-text">Multi-Brand</span>
+                </li>
+                <li class="nav-item" data-page="analytics">
+                    <span class="nav-icon">📈</span>
+                    <span class="nav-text">Analytics</span>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Dashboard Page -->
+            <div class="page active" id="dashboard">
+                <div class="page-header">
+                    <h2>Dashboard Overview</h2>
+                    <div class="live-indicator">
+                        <span class="live-dot"></span>
+                        <span>Live Updates</span>
+                    </div>
+                </div>
+                
+                <!-- KPI Cards -->
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <div class="kpi-icon">📋</div>
+                        <div class="kpi-content">
+                            <h3 class="kpi-value" id="totalOrders">72</h3>
+                            <p class="kpi-label">Today's Orders</p>
+                            <span class="kpi-trend positive">+12%</span>
+                        </div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-icon">💰</div>
+                        <div class="kpi-content">
+                            <h3 class="kpi-value">₹29,200</h3>
+                            <p class="kpi-label">Today's Revenue</p>
+                            <span class="kpi-trend positive">+8%</span>
+                        </div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-icon">🔥</div>
+                        <div class="kpi-content">
+                            <h3 class="kpi-value" id="activeOrders">5</h3>
+                            <p class="kpi-label">Active Orders</p>
+                            <span class="kpi-trend">Real-time</span>
+                        </div>
+                    </div>
+                    <div class="kpi-card">
+                        <div class="kpi-icon">⚡</div>
+                        <div class="kpi-content">
+                            <h3 class="kpi-value">92%</h3>
+                            <p class="kpi-label">Kitchen Efficiency</p>
+                            <span class="kpi-trend positive">+5%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AI Insights -->
+                <div class="insights-section">
+                    <h3>AI Insights & Recommendations</h3>
+                    <div class="insights-grid">
+                        <div class="insight-card positive">
+                            <div class="insight-icon">📈</div>
+                            <div class="insight-content">
+                                <h4>Revenue Growth</h4>
+                                <p>Revenue up 12% compared to last week</p>
+                            </div>
+                        </div>
+                        <div class="insight-card urgent">
+                            <div class="insight-icon">⚠️</div>
+                            <div class="insight-content">
+                                <h4>Inventory Alert</h4>
+                                <p>Tomato stock critically low - order immediately</p>
+                            </div>
+                        </div>
+                        <div class="insight-card suggestion">
+                            <div class="insight-icon">💡</div>
+                            <div class="insight-content">
+                                <h4>Menu Suggestion</h4>
+                                <p>Consider adding more vegetarian options for lunch</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Live Orders Feed -->
+                <div class="live-orders">
+                    <h3>Live Orders Feed</h3>
+                    <div class="orders-list" id="liveOrders">
+                        <!-- Orders will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Menu Optimization Page -->
+            <div class="page" id="menu">
+                <div class="page-header">
+                    <h2>AI-Powered Menu Optimization</h2>
+                    <button class="btn-primary">Optimize Prices</button>
+                </div>
+                
+                <div class="menu-grid">
+                    <div class="menu-item-card">
+                        <div class="menu-item-header">
+                            <h4>Butter Chicken</h4>
+                            <span class="brand-tag">Spice Symphony</span>
+                        </div>
+                        <div class="menu-item-details">
+                            <div class="price-section">
+                                <span class="current-price">₹450</span>
+                                <span class="cost">Cost: ₹180</span>
+                                <span class="profit-margin positive">60% Margin</span>
+                            </div>
+                            <div class="ai-recommendation">
+                                <span class="ai-badge">AI Suggests</span>
+                                <p>Increase price by ₹20 based on demand</p>
+                            </div>
+                            <div class="popularity-score">
+                                <div class="score-bar">
+                                    <div class="score-fill" style="width: 92%"></div>
+                                </div>
+                                <span>92% Popularity</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item-card">
+                        <div class="menu-item-header">
+                            <h4>Margherita Pizza</h4>
+                            <span class="brand-tag">Pasta Paradise</span>
+                        </div>
+                        <div class="menu-item-details">
+                            <div class="price-section">
+                                <span class="current-price">₹380</span>
+                                <span class="cost">Cost: ₹120</span>
+                                <span class="profit-margin positive">68% Margin</span>
+                            </div>
+                            <div class="ai-recommendation">
+                                <span class="ai-badge">AI Suggests</span>
+                                <p>Perfect pricing for current demand</p>
+                            </div>
+                            <div class="popularity-score">
+                                <div class="score-bar">
+                                    <div class="score-fill" style="width: 88%"></div>
+                                </div>
+                                <span>88% Popularity</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-item-card">
+                        <div class="menu-item-header">
+                            <h4>Classic Burger</h4>
+                            <span class="brand-tag">Burger Blast</span>
+                        </div>
+                        <div class="menu-item-details">
+                            <div class="price-section">
+                                <span class="current-price">₹320</span>
+                                <span class="cost">Cost: ₹140</span>
+                                <span class="profit-margin">56% Margin</span>
+                            </div>
+                            <div class="ai-recommendation">
+                                <span class="ai-badge">AI Suggests</span>
+                                <p>Consider combo offers to increase AOV</p>
+                            </div>
+                            <div class="popularity-score">
+                                <div class="score-bar">
+                                    <div class="score-fill" style="width: 85%"></div>
+                                </div>
+                                <span>85% Popularity</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kitchen Display Page -->
+            <div class="page" id="kitchen">
+                <div class="page-header">
+                    <h2>Smart Kitchen Display System</h2>
+                    <div class="station-tabs">
+                        <button class="station-tab active" data-station="all">All Stations</button>
+                        <button class="station-tab" data-station="curry">Curry</button>
+                        <button class="station-tab" data-station="pizza">Pizza</button>
+                        <button class="station-tab" data-station="grill">Grill</button>
+                    </div>
+                </div>
+
+                <div class="orders-board">
+                    <div class="order-card urgent">
+                        <div class="order-header">
+                            <span class="order-id">ORD-003</span>
+                            <span class="order-platform">Direct</span>
+                            <div class="timer urgent">
+                                <span class="timer-icon">⏰</span>
+                                <span id="timer-003">12:00</span>
+                            </div>
+                        </div>
+                        <div class="order-customer">Amit Kumar</div>
+                        <div class="order-items">
+                            <div class="item">Classic Burger</div>
+                            <div class="item">Fries</div>
+                            <div class="item">Coke</div>
+                        </div>
+                        <div class="order-total">₹420</div>
+                        <div class="order-station">Grill Station</div>
+                        <button class="btn-complete">Mark Ready</button>
+                    </div>
+
+                    <div class="order-card normal">
+                        <div class="order-header">
+                            <span class="order-id">ORD-001</span>
+                            <span class="order-platform">Swiggy</span>
+                            <div class="timer normal">
+                                <span class="timer-icon">⏱️</span>
+                                <span id="timer-001">08:00</span>
+                            </div>
+                        </div>
+                        <div class="order-customer">Rahul Sharma</div>
+                        <div class="order-items">
+                            <div class="item">Butter Chicken</div>
+                            <div class="item">Naan</div>
+                            <div class="item">Rice</div>
+                        </div>
+                        <div class="order-total">₹520</div>
+                        <div class="order-station">Curry Station</div>
+                        <button class="btn-complete">Mark Ready</button>
+                    </div>
+
+                    <div class="order-card ready">
+                        <div class="order-header">
+                            <span class="order-id">ORD-002</span>
+                            <span class="order-platform">Zomato</span>
+                            <div class="timer ready">
+                                <span class="timer-icon">✅</span>
+                                <span>Ready</span>
+                            </div>
+                        </div>
+                        <div class="order-customer">Priya Patel</div>
+                        <div class="order-items">
+                            <div class="item">Margherita Pizza</div>
+                            <div class="item">Garlic Bread</div>
+                        </div>
+                        <div class="order-total">₹450</div>
+                        <div class="order-station">Pizza Station</div>
+                        <button class="btn-dispatch">Dispatch</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Inventory Page -->
+            <div class="page" id="inventory">
+                <div class="page-header">
+                    <h2>Smart Inventory Management</h2>
+                    <button class="btn-primary">Generate Reorder List</button>
+                </div>
+
+                <div class="inventory-grid">
+                    <div class="inventory-item adequate">
+                        <div class="item-header">
+                            <h4>Chicken (kg)</h4>
+                            <span class="stock-status adequate">Adequate</span>
+                        </div>
+                        <div class="stock-info">
+                            <div class="stock-level">
+                                <span class="current">45 kg</span>
+                                <span class="minimum">Min: 20 kg</span>
+                            </div>
+                            <div class="stock-bar">
+                                <div class="stock-fill adequate" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="item-details">
+                            <span class="cost">₹280/kg</span>
+                            <span class="supplier">FreshMeat Co</span>
+                        </div>
+                        <div class="ai-suggestion">Order in 3 days</div>
+                    </div>
+
+                    <div class="inventory-item low">
+                        <div class="item-header">
+                            <h4>Tomatoes (kg)</h4>
+                            <span class="stock-status low">Low Stock</span>
+                        </div>
+                        <div class="stock-info">
+                            <div class="stock-level">
+                                <span class="current">8 kg</span>
+                                <span class="minimum">Min: 15 kg</span>
+                            </div>
+                            <div class="stock-bar">
+                                <div class="stock-fill low" style="width: 25%"></div>
+                            </div>
+                        </div>
+                        <div class="item-details">
+                            <span class="cost">₹40/kg</span>
+                            <span class="supplier">Green Valley</span>
+                        </div>
+                        <div class="ai-suggestion urgent">Order immediately</div>
+                    </div>
+
+                    <div class="inventory-item adequate">
+                        <div class="item-header">
+                            <h4>Mozzarella Cheese (kg)</h4>
+                            <span class="stock-status adequate">Adequate</span>
+                        </div>
+                        <div class="stock-info">
+                            <div class="stock-level">
+                                <span class="current">12 kg</span>
+                                <span class="minimum">Min: 10 kg</span>
+                            </div>
+                            <div class="stock-bar">
+                                <div class="stock-fill adequate" style="width: 60%"></div>
+                            </div>
+                        </div>
+                        <div class="item-details">
+                            <span class="cost">₹450/kg</span>
+                            <span class="supplier">Dairy Fresh</span>
+                        </div>
+                        <div class="ai-suggestion">Order in 2 days</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Brands Page -->
+            <div class="page" id="brands">
+                <div class="page-header">
+                    <h2>Multi-Brand Management</h2>
+                    <button class="btn-primary">Add New Brand</button>
+                </div>
+
+                <div class="brands-grid">
+                    <div class="brand-card">
+                        <div class="brand-header">
+                            <h3>Spice Symphony</h3>
+                            <span class="brand-type">Indian Cuisine</span>
+                            <span class="status-badge active">Active</span>
+                        </div>
+                        <div class="brand-metrics">
+                            <div class="metric">
+                                <span class="metric-value">₹45,000</span>
+                                <span class="metric-label">Monthly Revenue</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">₹380</span>
+                                <span class="metric-label">Avg Order Value</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">23</span>
+                                <span class="metric-label">Orders Today</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="brand-card">
+                        <div class="brand-header">
+                            <h3>Pasta Paradise</h3>
+                            <span class="brand-type">Italian</span>
+                            <span class="status-badge active">Active</span>
+                        </div>
+                        <div class="brand-metrics">
+                            <div class="metric">
+                                <span class="metric-value">₹38,000</span>
+                                <span class="metric-label">Monthly Revenue</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">₹420</span>
+                                <span class="metric-label">Avg Order Value</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">18</span>
+                                <span class="metric-label">Orders Today</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="brand-card">
+                        <div class="brand-header">
+                            <h3>Burger Blast</h3>
+                            <span class="brand-type">American</span>
+                            <span class="status-badge active">Active</span>
+                        </div>
+                        <div class="brand-metrics">
+                            <div class="metric">
+                                <span class="metric-value">₹52,000</span>
+                                <span class="metric-label">Monthly Revenue</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">₹350</span>
+                                <span class="metric-label">Avg Order Value</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">31</span>
+                                <span class="metric-label">Orders Today</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Analytics Page -->
+            <div class="page" id="analytics">
+                <div class="page-header">
+                    <h2>Analytics & Insights</h2>
+                    <div class="date-filter">
+                        <select id="dateRange">
+                            <option value="7">Last 7 Days</option>
+                            <option value="30">Last 30 Days</option>
+                            <option value="90">Last 3 Months</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="analytics-grid">
+                    <div class="chart-card">
+                        <h3>Daily Revenue Trend</h3>
+                        <div class="chart-placeholder">
+                            <canvas id="revenueChart" width="400" height="200"></canvas>
+                        </div>
+                    </div>
+                    
+                    <div class="analytics-summary">
+                        <h3>Performance Summary</h3>
+                        <div class="summary-items">
+                            <div class="summary-item">
+                                <span class="summary-label">Customer Satisfaction</span>
+                                <span class="summary-value">4.2 ⭐</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="summary-label">Avg Prep Time</span>
+                                <span class="summary-value">14.5 min</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="summary-label">Food Cost %</span>
+                                <span class="summary-value">28%</span>
+                            </div>
+                            <div class="summary-item">
+                                <span class="summary-label">Peak Hours</span>
+                                <span class="summary-value">12-2 PM, 7-9 PM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="platform-performance">
+                    <h3>Delivery Platform Performance</h3>
+                    <div class="platform-grid">
+                        <div class="platform-card">
+                            <h4>Swiggy</h4>
+                            <div class="platform-stats">
+                                <span>28 orders • ₹11,200 revenue</span>
+                                <span>18% commission • 32 min avg delivery</span>
+                                <span class="rating">4.3 ⭐</span>
+                            </div>
+                        </div>
+                        <div class="platform-card">
+                            <h4>Zomato</h4>
+                            <div class="platform-stats">
+                                <span>24 orders • ₹9,600 revenue</span>
+                                <span>20% commission • 35 min avg delivery</span>
+                                <span class="rating">4.1 ⭐</span>
+                            </div>
+                        </div>
+                        <div class="platform-card">
+                            <h4>Direct Orders</h4>
+                            <div class="platform-stats">
+                                <span>20 orders • ₹8,400 revenue</span>
+                                <span>0% commission • 25 min avg delivery</span>
+                                <span class="rating">4.6 ⭐</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div id="toast-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
